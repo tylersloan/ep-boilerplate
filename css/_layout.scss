@@ -1,34 +1,20 @@
-/*
-  `Vars & `Mixins
-*/
-
-$wrapper: 1440px;
-
-$defaultGutter: 0 0 0 0 !default;
-
-@mixin gutterBot($gutter: $defaultGutter) {
-  margin: $gutter;
-}
-
-/*
-  `Base
-*/
-
 .container {
-  border: 5px solid;
-  border-color: fuchsia;
+  outline: 4px solid plum;
   margin: 0 auto;
   max-width: $wrapper;
 }
 
-.grid-item {
-  background-color: limegreen;
+.item {
+  background-color: skyblue;
   color: #fff;
   font-size: 24px;
   text-align: center;
-  
+
   & & {
     background-color: coral;
+  }
+  & & & {
+    background-color: palegreen;
   }
 }
 
@@ -36,16 +22,14 @@ $defaultGutter: 0 0 0 0 !default;
   `Flexbox Stuff
 */
 
-// Setting the gutter
-// If no value set, it takes default value of 0
-.grid-item {
-  @include gutterBot(5px);
-}
-
 // Init flexbox
 .flex-parent {
   display: flex;
-  
+
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+  }
+
   .no-flex &:after {
     clear: both;
     content: '';
@@ -53,43 +37,25 @@ $defaultGutter: 0 0 0 0 !default;
   }
 }
 
-.grid-item {
+// Setting the gutter
+// If no value set, it takes default value of 0
+.item {
+  @include gutterBot(5px);
   flex: 1;
-  
+
   .no-flex & {
+    flex: initial; // For testing '.no-flex' in a flexbox supported browser
     float: left;
   }
 }
-.grid-item--2 {
-  flex: 2;
-}
-.grid-item--3 {
-  flex: 3;
-}
-.grid-item--4 {
-  flex: 4;
-}
-.grid-item--5 {
-  flex: 5;
-}
-.grid-item--6 {
-  flex: 6;
-}
-.grid-item--7 {
-  flex: 7;
-}
-.grid-item--8 {
-  flex: 8;
-}
-.grid-item--9 {
-  flex: 9;
-}
-.grid-item--10 {
-  flex: 10;
-}
-.grid-item--11 {
-  flex: 11;
-}
-.grid-item--12 {
-  flex: 12;
+
+@for $i from 1 through 12 {
+  .item--#{$i} {
+    @extend .item;
+    flex: $i;
+
+    .no-flex & {
+      width: percentage($i/$gridColumns);
+    }
+  }
 }
