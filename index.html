@@ -7,121 +7,145 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <header>
+    <h1>Flex, Box, Action!</h1>
+  </header>
 
-    <header>
-      <h1>Flex, Box, Action!</h1>
-    </header>
-
-    <section>
-      <h3>12 Column Grid</h3>
-      <div class="container">
-        <div class="flex-parent">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
-          <div class="item">7</div>
-          <div class="item">8</div>
-          <div class="item">9</div>
-          <div class="item">10</div>
-          <div class="item">11</div>
-          <div class="item">12</div>
+  <main>
+    <article class="container">
+      <section>
+        <h3>12 Column Grid</h3>
+        <div class="grid grid--fit">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h3>2 Column 60/40</h3>
-      <div class="container">
-        <div class="flex-parent">
-          <div class="item--6">1</div>
-          <div class="item--4">2</div>
+      <section>
+        <h3>grid--halves</h3>
+        <div class="grid grid--halves">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h3>3 Column 33/33/33</h3>
-      <div class="container">
-        <div class="flex-parent">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
+      <section>
+        <h3>grid--thirds</h3>
+        <div class="grid grid--thirds">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h3>2 Column 30/70 w/ Inner 2 Column</h3>
-      <div class="container">
-        <div class="flex-parent">
-          <div class="item--3">1</div>
-          <div class="item--7">
-            <div class="flex-parent">
-              <div class="item--2">1</div>
-              <div class="item--2">2</div>
+      <section>
+        <h3>grid--fourths</h3>
+        <div class="grid grid--fourths">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+        </div>
+      </section>
+
+      <section>
+        <h3>2 Column 60/40</h3>
+        <div class="grid">
+          <div class="grid__column--6"></div>
+          <div class="grid__column--4"></div>
+        </div>
+      </section>
+
+      <section>
+        <h3>3 Column 33/33/33</h3>
+        <div class="grid">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+        </div>
+      </section>
+
+      <section>
+        <h3>2 Column 30/70 w/ Inner 2 Column</h3>
+        <div class="grid">
+          <div class="grid__column--3"></div>
+          <div class="grid__column--7">
+            <div class="grid">
+              <div class="grid__column--2"></div>
+              <div class="grid__column--2"></div>
             </div>
-            <div class="flex-parent">
-              <div class="item--2">3</div>
-              <div class="item--2">4</div>
+            <div class="grid">
+              <div class="grid__column--2"></div>
+              <div class="grid__column--2"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h3>Complex Layout</h3>
-      <div class="container">
-        <div class="flex-parent">
-          <div class="item">
-            <div class="flex-parent">
-              <div class="item">1</div>
-              <div class="item">2</div>
-              <div class="item">3</div>
+      <section>
+        <h3>Complex Layout</h3>
+        <div class="grid">
+          <div class="grid__column">
+            <div class="grid">
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
             </div>
-            <div class="flex-parent">
-              <div class="item--7">1</div>
-              <div class="item--5">2</div>
+            <div class="grid">
+              <div class="grid__column--7"></div>
+              <div class="grid__column--5"></div>
             </div>
           </div>
-          <div class="item">
-            <div class="flex-parent">
-              <div class="item--2">1</div>
-              <div class="item--10">2</div>
+          <div class="grid__column">
+            <div class="grid">
+              <div class="grid__column--2"></div>
+              <div class="grid__column--10"></div>
             </div>
-            <div class="flex-parent">
-              <div class="item">
-                <div class="flex-parent">
-                  <div class="item">1</div>
-                  <div class="item">2</div>
+            <div class="grid">
+              <div class="grid__column">
+                <div class="grid">
+                  <div class="grid__column"></div>
+                  <div class="grid__column"></div>
                 </div>
               </div>
             </div>
-            <div class="flex-parent">
-              <div class="item">1</div>
-              <div class="item">2</div>
-              <div class="item">3</div>
-              <div class="item">4</div>
-              <div class="item">5</div>
-              <div class="item">6</div>
+            <div class="grid">
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
+              <div class="grid__column"></div>
             </div>
           </div>
         </div>
-        <div class="flex-parent">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
+        <div class="grid">
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
+          <div class="grid__column"></div>
         </div>
-        <div class="flex-parent">
-          <div class="item">1</div>
+        <div class="grid">
+          <div class="grid__column"></div>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </article>
+  </main>
 
 </body>
 </html>
